@@ -112,7 +112,7 @@
 							<ul class="nav navbar-nav">
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-										<span>Review of existing skills</span
+										<span>Anaconda</span
 									</a>
 									<ul class="dropdown-menu" role="menu">
 										
@@ -124,11 +124,11 @@
 											<a href="01-Software.html">Software</a>
 										</li>
 										
-										<li >
+										<li class="active">
 											<a href="02-Anaconda.html">Anaconda</a>
 										</li>
 										
-										<li class="active">
+										<li >
 											<a href="03-Review_of_existing_skills.html">Review of existing skills</a>
 										</li>
 										
@@ -148,49 +148,51 @@
 		
 		<ul class="pager">
 			
-			<li class="previous"><a href="02-Anaconda.html">&larr; Previous (Anaconda)</a></li>
+			<li class="previous"><a href="01-Software.html">&larr; Previous (Software)</a></li>
 			
 			
 			
-			<li class="next disabled"><a>Next &rarr;</a></li>
+			<li class="next"><a href="03-Review_of_existing_skills.html">Next (Review of existing skills) &rarr;</a></li>
 			
 		</ul>
 		
-		<h1>Data Exploration (Tips Dataset)</h1>
-<p>Using <code>python</code> with <code>pandas</code> and other modules does greatly simplify the data exploration process. However, we don't want you to get so focused on the tools that you overlook the actual process, and with enough masochism one could carry out all of the data exploration for this course using SQL, Excel, or even other programming languages.</p>
-<p><strong>So before we start on <code>python</code> and friends, we want you to explore a small dataset. You can use any software tool/environment that you like &mdash; our goal here is help you realise that (even if data science is new to you) that you might be bringing more skills to the table than you realise.</strong></p>
-<p>We start by downloading the dataset:</p>
-<div class="pager">
-<a class="btn btn-primary btn-lg" href="files/data/tips.csv" role="button">Download Tips dataset</a>
-</div>
-
-<p>Open this dataset using the software of your choice &mdash; excel, mysql, ... &mdash; and using your software examine the data. Typical things we look for include:</p>
+		<h1>Python tools</h1>
+<p>This page is intended to be a minimal overview of the Anaconda distribution and jupyter-lab interface.
+For more detailed guides have a look at 
+<a href="https://docs.anaconda.com/free/navigator/tutorials/index.html">Anaconda's official documentation</a>.</p>
+<h2>Anaconda Navigator</h2>
+<p>The Anaconda distribution supports a large number of python tools and to simplify their use, the distribution includes a small application called the <em>Anaconda Navigator</em>. For our purposes, there are two important items:</p>
 <ul>
-<li>For each attribute (columns) find the following information.<ul>
-<li>The attribute type, e.g., nominal, ordinal, numeric.</li>
-<li>Percentage of missing values in the data.</li>
-<li>Statistical numerical measures &mdash; centre (mean, median, mode), spread (min, max, range, standard deviation), symmetry (skewness).</li>
-<li>Statistical graphical representations &mdash; bar plots, histograms, ... even pie charts.</li>
-<li>Are there any rows that have a value for the attribute that no other record has (i.e., unique values)?</li>
-<li>Are there any outliers?</li>
+<li>The <em>Environments</em> tab, on the left, that opens graphical interface to the <code>conda</code> package manager.</li>
+<li>The <em>jupyter-lab</em> card near the top right, that starts the <em>jupyter-lab</em> kernel back-end and opens the front-end in a browser window.</li>
 </ul>
-</li>
-<li>Which attributes seem to be linked?</li>
-</ul>
-<p>Later we will perform the same analysis using pandas, but for now the focus is on see what you can see when you look at data.</p>
-<p>When you are happy with exploring the data, try the following Moodle quiz.</p>
-<p><a name="Quiz"></a></p>
-<div class="pager">
-<a class="btn btn-primary btn-lg" href="https://moodle.wit.ie/mod/quiz/view.php?id=4185876" role="button">Moodle Quiz</a>
-</div>
+<figure>
+  <img src="files/navigator.png" alt="" width="80%" >
+  <figcaption>Anaconda Navigator</figcaption>
+</figure>
+
+<p>On launching the jupyter-lab you should see the following</p>
+<figure>
+  <img src="files/jupyter_start.png" alt="" width="80%" >
+  <figcaption>jupyter-lab interface</figcaption>
+</figure>
+
+<p>Now click on <code>Python 3</code> notebook icon to get a new blank notebook:</p>
+<figure>
+  <img src="files/jupyter_blank.png" alt="" width="80%" >
+  <figcaption>jupyter-lab on creating a new notebook</figcaption>
+</figure>
+
+<p>We will demo this interface in the pre-start lab, but for now our primary goal is that you have the software installed and working.</p>
+<p>Now we are going to put python aside for a moment and <a href="03-Review_of_existing_skills.html">review your existing data analytics skills using a small dataset</a>.</p>
 		
 		<ul class="pager">
 			
-			<li class="previous"><a href="02-Anaconda.html">&larr; Previous (Anaconda)</a></li>
+			<li class="previous"><a href="01-Software.html">&larr; Previous (Software)</a></li>
 			
 			
 			
-			<li class="next disabled"><a>Next &rarr;</a></li>
+			<li class="next"><a href="03-Review_of_existing_skills.html">Next (Review of existing skills) &rarr;</a></li>
 			
 		</ul>
 
