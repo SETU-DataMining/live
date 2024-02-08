@@ -1,0 +1,16 @@
+# Macos stuff
+.DS_Store
+._.DS_Store
+._*.pdf
+
+topics/04-Regression/03-Resources/files/.gitignore
+
+# Unneeded code snippets
+resources/1D_Curve_Fitting_code_snippets.zip
+resources/Credit.csv
+resources/CreditBalance_code_snippets.zip
+resources/Diamonds_code_snippets.zip
+resources/diamond.dat.txt
+resources/measlesPCA_code_snippets.zip
+resources/pltLine_code_snippets.zip
+resources/residualCorrelation_code_snippets.zip
