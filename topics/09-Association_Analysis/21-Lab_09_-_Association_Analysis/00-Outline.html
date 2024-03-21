@@ -95,12 +95,16 @@
 											<a href="../../../topics/06-Classification/index.html">Classification</a>
 										</li>
 										
-										<li class="active">
+										<li >
 											<a href="../../../topics/07-Classification2/index.html">Classification2</a>
 										</li>
 										
 										<li >
 											<a href="../../../topics/08-Data_Modelling_-_Advanced/index.html">Data Modelling - Advanced</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/09-Association_Analysis/index.html">Association Analysis</a>
 										</li>
 										
 									</ul>
@@ -121,11 +125,11 @@
 										<li class="dropdown-header">Resources</li>
 										
 										<li >
-											<a href="../../../topics/07-Classification2/index.html#01-Overview">Overview</a>
+											<a href="../../../topics/09-Association_Analysis/index.html#01-Association_Rule_Analysis">Association Rule Analysis</a>
 										</li>
 										
 										<li class="active">
-											<a href="../../../topics/07-Classification2/index.html#21-Practical">Practical</a>
+											<a href="../../../topics/09-Association_Analysis/index.html#21-Lab_09_-_Association_Analysis">Lab 09 - Association Analysis</a>
 										</li>
 										
 									</ul>
@@ -140,28 +144,12 @@
 							<ul class="nav navbar-nav">
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-										<span>NB SVM-PimaDiabetes</span
+										<span>Outline</span
 									</a>
 									<ul class="dropdown-menu" role="menu">
 										
-										<li >
-											<a href="00-Outline.html">Outline</a>
-										</li>
-										
 										<li class="active">
-											<a href="01-NB_SVM-PimaDiabetes.html">NB SVM-PimaDiabetes</a>
-										</li>
-										
-										<li >
-											<a href="02-LR_Ens-Digits.html">LR Ens-Digits</a>
-										</li>
-										
-										<li >
-											<a href="03-DT-PlayTennis.html">DT-PlayTennis</a>
-										</li>
-										
-										<li >
-											<a href="04-KNN_DT-Iris.html">KNN DT-Iris</a>
+											<a href="00-Outline.html">Outline</a>
 										</li>
 										
 									</ul>
@@ -180,36 +168,39 @@
 		
 		<ul class="pager">
 			
-			<li class="previous"><a href="00-Outline.html">&larr; Previous (Outline)</a></li>
+			<li class="previous disabled"><a>&larr; Previous</a></li>
 			
 			
 			
-			<li class="next"><a href="02-LR_Ens-Digits.html">Next (LR Ens-Digits) &rarr;</a></li>
+			<li class="next disabled"><a>Next &rarr;</a></li>
 			
 		</ul>
 		
-		<h1>Pima Diabetes measurements and prediction using Naive Bayes and SVM</h1>
-<p>The <a href="files/NB_SVM.ipynb">notebook</a> (right-click and
-download this file) introduces a data set we have not used before. It relates
-to predicting Diabetes status, for a group of Pima women, given measurements of
-BMI, blood glucose and other attributes that might be expected to predict
-Diabetes onset.</p>
-<p>The data set has been provided <a href="files/data/pima-indians-diabetes.csv">here</a> and
-should be placed in a subfolder of the folder where you placed the notebook.</p>
-<p>The notebook itself takes you through an analysis of the data using the Naive
-Bayes and SVM algorithm that we met in class. These algorithms were chosen
-because they are in some senses opposite in terms of how they perform.</p>
-<p>Running the notebook cell-by-cell, studying the outputs and comparing
-your interpretation with the comments and guidance should help your
-understanding.</p>
+		<h1>Association Analysis</h1>
+<p>This week lab consists of two notebooks using association analysis, firstly using brute force and then the second, using python library <a href="http://rasbt.github.io/mlxtend/">mlxtend</a> to apply more scalable algorithms to larger data sets.</p>
+<p>The notebooks can be obtained from the following links:</p>
+<ul>
+<li><a href="./files/Practical_A_-_ARM_Brute_Force.ipynb">Using brute force techniques for association analysis</a></li>
+<li><a href="./files/Practical_B_-_ARM_Groceries_DataSet.ipynb">Data investigation and association analysis using the classic groceries data set</a></li>
+</ul>
+<h2>Installation</h2>
+<p>You will need to update your python packages by installing <code>mlxtend</code> using the
+following command:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span>    <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">mlxtend</span>
+</pre></div></td></tr></table></div>
+
+
+<h2>Resources</h2>
+<p>The datafile came from the R coimmunity and a good source is <a href="https://github.com/stedy/Machine-Learning-with-R-datasets/blob/master/groceries.csv">"Machine Learning with R" - datasets groceries.csv</a>.</p>
+<p>For your convenience, the file has been downloaded for you <a href="./files/data/groceries.csv">here</a>.</p>
 		
 		<ul class="pager">
 			
-			<li class="previous"><a href="00-Outline.html">&larr; Previous (Outline)</a></li>
+			<li class="previous disabled"><a>&larr; Previous</a></li>
 			
 			
 			
-			<li class="next"><a href="02-LR_Ens-Digits.html">Next (LR Ens-Digits) &rarr;</a></li>
+			<li class="next disabled"><a>Next &rarr;</a></li>
 			
 		</ul>
 
