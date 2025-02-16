@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>(MSc) Data Mining</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=209190" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://datamining202425.slack.com" target="_blank"><img height="15pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html#01-CA1_-_Data_Mining_Proposal">CA1 - Data Mining Proposal</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/21-Assignments/index.html#02-CA2_-_Exploratory_Data_Analysis">CA2 - Exploratory Data Analysis</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Outline</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li class="active">
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Exploratory Data Analysis of the TIMSS 2023 Dataset</h1>
+<h2>Aim</h2>
+<p>The purpose of this assignment is to perform an Exploratory Data Analysis of the TIMSS 2023 dataset, using pandas/matplotlib/seaborn and the processes covered in the course to date.</p>
+<p>The TIMSS 2023 dataset was selected for this assignment, in part, because it is too large to perform a complete EDA and so you need to focus on particular aspects of the dataset. </p>
+<p>The assessment will be worth 30% of your final marks.</p>
+<p>The deadline will be Sunday 16 February at 21:00hrs.</p>
+<h2>Background to Dataset (TIMSS 2023)</h2>
+<p>TIMSS 2023 is the eight assessment cycle of TIMSS, the Trends in International Mathematics and Science Study. TIMSS 2023, was conducted with students in 64 countries and 8 benchmarking systems.  The study is conducted every four years and given to students in grade 4 (4th class in Irish primary schools) and to students in grade 8 (2nd year in Irish secondary schools). </p>
+<p>The eight assessment cycle of TIMSS, TIMSS 2023 was published in December 2024 and the data collated was made publicly available in February 6, 2025. We want to explore this data and see what insights we can gain from it.</p>
+<p>The dataset is huge (2.9+ GB including documentation). For each of the 64 countries in the study and for both of two grades there are eight files <a href="../../../resources/TIMSS/docs/T23_User_Guide_International_Database.pdf">T23 User Guide, (exhibit 2.4, p.52)</a>. </p>
+<p>So to keep this assignment manageable we will:</p>
+<ul>
+<li>Limit treatment to one country (Ireland). </li>
+<li>Only look at grade 8 performance.</li>
+<li>Ignore Science performance and Science teacher data, so only look at Mathematics.</li>
+<li>Only look at the standard results (and ignore the Problem Solving and Inquiry (PSI) tasks and bridge variation of results).</li>
+</ul>
+<p>As a result, the 1024+ data files in the TIMSS study drop to the following files:</p>
+<table>
+<thead>
+<tr>
+<th>Filename</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SPSS/bcgirlm8.sav &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>School context data</td>
+</tr>
+<tr>
+<td>SPSS/bsairlm8.sav</td>
+<td>Student achievement data</td>
+</tr>
+<tr>
+<td>SPSS/bspirlm8.sav</td>
+<td>Student process data</td>
+</tr>
+<tr>
+<td>SPSS/bsrirlm8.sav</td>
+<td>Within-country scoring reliability data</td>
+</tr>
+<tr>
+<td>SPSS/bsgirlm8.sav</td>
+<td>Student context data data</td>
+</tr>
+<tr>
+<td>SPSS/bstirlm8.sav</td>
+<td>Student achievement data</td>
+</tr>
+<tr>
+<td>SPSS/btmirlm8.sav</td>
+<td>Mathematics teacher context data</td>
+</tr>
+<tr>
+<td>SPSS/btsirlm8.sav</td>
+<td>Science teacher context data (we will ignore this)</td>
+</tr>
+</tbody>
+</table>
+<p>Notes: </p>
+<ul>
+<li>
+<p>The naming convention used for filename is:</p>
+<ul>
+<li>first three letters (<code>bcg</code>,<code>bsa</code>,<code>bsp</code>,<code>bsr</code>,<code>bsg</code>,<code>bst</code>,<code>btm</code>, and <code>bts</code>) indicating the grade level and purpose of the file.</li>
+<li>next three letters indicate the country (e.g. <code>irl</code> for Ireland).</li>
+<li>the next two characters, <code>m8</code>, indicate the eight cycle of TIMSS.</li>
+</ul>
+</li>
+<li>
+<p>For completeness, the Science teacher context data (<code>btsirlm8.sav</code>) is still included in the dataset, but as mentioned above, we will not use it in this assignment.</p>
+</li>
+</ul>
+<p>To understand this dataset you will need the following:</p>
+<ul>
+<li>
+<p><a href="../../../resources/TIMSS/docs/T23_User_Guide_International_Database.pdf">TIMSS 2023 User Guide for the International Database</a><br /></p>
+<ul>
+<li>Chapter 2 outlines the purpose of each of the data files and their structure.</li>
+</ul>
+</li>
+<li>
+<p><a href="../../../resources/TIMSS/docs/T23_G8_Codebook">Codebook</a><br /></p>
+<ul>
+<li>This excel workbook contains the TIMSS codebook. It contains a worksheet per each type of data file in that database.</li>
+<li>Each worksheet lists the variables in the data file, their type, and the categories for categorical variables, etc.</li>
+</ul>
+</li>
+</ul>
+<p>Also you might find of use/interest following report generated by the Irish team which examines the performance of the Ireland students, <a href="../../../resources/TIMSS/extra/TIMSS_2023_National_Report_Ireland.pdf">TIMSS_2023_National_Report_Ireland.pdf</a>.</p>
+<h2>Reading the dataset</h2>
+<p>The dataset is published in two formats <a href="https://www.ibm.com/products/spss-statistics">SPSS</a> and <a href="https://www.sas.com">SAS</a>.  We will use the SPSS format which contains the data and meta information about each column (type,categories, etc).</p>
+<p>Pandas can read SPSS <code>.sav</code> files once the python module <code>pyreadstat</code> is installed. So first install <code>pyreadstat</code> by:</p>
+<ul>
+<li>If using anaconda and within a jupyter-lab notebook type </li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>!conda<span class="w"> </span>install<span class="w"> </span>conda-forge::pyreadstat
+</code></pre></div></td></tr></table></div>
+
+<ul>
+<li>If using anaconda and running an anaconda shell </li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>conda-forge::pyreadstat
+</code></pre></div></td></tr></table></div>
+
+<ul>
+<li>If using standard python type </li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pyreadstat
+</code></pre></div></td></tr></table></div>
+
+<p>Then to read in a given datafile we use <code>pd.read_spss</code> command.</p>
+<p>We also want to read the codebook to understand the data. Since this is an excel workbook, we can use the <code>pd.read_excel</code> command to read this.</p>
+<h2>Performing an Exploratory Data Analysis</h2>
+<p>Even taking the limited selection of files that we have, there is still too much data with with (approximately 3542 variables). In fact, one of the reasons for picking this dataset was so that there are too many variables to deal with in the limited time you should allocate to a single assignment.  </p>
+<p>So you will need to pick aspects that are of interest and focus on these. For example (and don't be limited to these suggestions):</p>
+<ul>
+<li>You could do a deep dive into any ONE of the data files:<ul>
+<li>For example, you could look at the <code>bsg</code> data file, storing student context and build a profile of the type of students who took the test. </li>
+<li>Or you could look at the <code>btm</code> data file and build a profile of the mathematics teachers who taught the students who took the test. </li>
+<li>Or you could look at the <code>bcg</code> data file and build a profile of the schools that the students attended.</li>
+</ul>
+</li>
+<li>You could link data from different files:<ul>
+<li>For example, you could link the <code>bsg</code> data file with the <code>bst</code> data file to see if there is a relationship between student context and teacher context. </li>
+<li>Or you could link the <code>bsg</code> data file with the <code>bsa</code> data file to see if there is a relationship between student context and student achievement.</li>
+</ul>
+</li>
+</ul>
+<h2>Steps</h2>
+<p>The following steps will get you started with this assignment and will help ensure that your notebooks are executable as is for grading.</p>
+<h3>Step 1+: Assignment Setup</h3>
+<p>Create a root folder for this assignment and download notebook, <a href="files/T23_G8_-_00_-_Assignment.ipynb">T23_G8_-<em>00</em>-_Assignment.ipynb</a>. Run all cells, to:</p>
+<ul>
+<li>Create assignment tree. </li>
+<li>Download the required datafiles and documentation.</li>
+<li>Generate a zip file of your assignment files to upload to Moodle.</li>
+</ul>
+<p>You should end up with the following tree structure.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code>.
+├──<span class="w"> </span>T23_G8_-_00_-_Assignment.ipynb
+├──<span class="w"> </span>T23_G8_-_01_-_Import.ipynb
+├──<span class="w"> </span>TIMSS_EDA.zip
+├──<span class="w"> </span>data
+└──<span class="w"> </span>orig
+<span class="w">    </span>├──<span class="w"> </span>SPSS
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>bcgirlm8.sav
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>bsairlm8.sav
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>bsgirlm8.sav
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>bspirlm8.sav
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>bsrirlm8.sav
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>bstirlm8.sav
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>btmirlm8.sav
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>btsirlm8.sav
+<span class="w">    </span>├──<span class="w"> </span>docs
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>T23_G8_Codebook.xlsx
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>T23_User_Guide_International_Database.pdf
+<span class="w">    </span>└──<span class="w"> </span>extra
+<span class="w">        </span>└──<span class="w"> </span>TIMSS_2023_National_Report_Ireland.pdf
+</code></pre></div></td></tr></table></div>
+
+<h3>Step 2+: Import the Dataset</h3>
+<p>The notebook <code>T23_G8_-_01_-_Import.ipynb</code> shows some code that I used to initially explore the dataset. Your should to review this code and then complete the cleaning process. Some initial cleaning step ideas are given to help you get started.</p>
+<h3>Step 3+: Explore the Dataset</h3>
+<p>Construct a high-level overview of the data.  You could use the published report specific to ireland <a href="../../../resources/TIMSS/extra/TIMSS_2023_National_Report_Ireland.pdf">TIMSS 2023 National Report - Ireland</a>, and see if you can replicate any of the analysis in this report. Again, you are not expected to replicate the entire report! That report reflects a substantial body of work carried out by a number of data science professionals. But you could pick a few aspects to focus on.</p>
+<ul>
+<li>Construct a list of research questions that you would like to answer.</li>
+</ul>
+<h3>Step 4+: Perform the Exploratory Data Analysis</h3>
+<p>Here you ... well, perform the Exploratory Data Analysis</p>
+<ul>
+<li>Perform the EDA to answer the questions you compiled in previous step. Make sure to interpret any generated visualisations and statistical summaries.</li>
+<li>Write a conclusion that summarizes your findings and suggests next steps.</li>
+</ul>
+<h3>Step 5+: Create Archive to Upload to Moodle</h3>
+<p>Run all cells in notebook <code>T23_G8_-_00_-_Assignment.ipynb</code> to generate ZIP Archive to upload to Moodle using the following link.</p>
+<div class="pager">
+<a class="btn btn-primary btn-lg" href="https://moodle.wit.ie/mod/assign/view.php?id=4469633" role="button">Moodle Assignment</a>
+</div>
+
+<h2>Submission Guidelines</h2>
+<ul>
+<li>Make sure your notebooks match the naming convention <code>T23_G8_-_##_-_TASK.ipynb</code>, where:<ul>
+<li><code>##</code> is the two digit task number.</li>
+<li><code>TASK</code> is the task name. </li>
+</ul>
+</li>
+<li>Ensure that your notebook will execute when all cells run in order. A good test for this, is to select <code>Kernel</code> / <code>Restart Kernel and Run All Cells...</code>.</li>
+<li>Ensure that your notebooks are well-organized, clearly written, and includes appropriate headings and subheadings (via markdown).</li>
+<li>If you decide to write functions to perform your EDA (often a good idea), then feel free to put those functions into a separate python script file, which is then imported in your notebook.  Just make sure that any script files are included in the generated archive (see bottom of <a href="files/T23_G8_-_00_-_Assignment.ipynb">T23_G8_-<em>00</em>-_Assignment.ipynb</a> for instructions to do this.)</li>
+</ul>
+<h2>Grading</h2>
+<p>This assignment is 
+* Import and Clean (20%)
+    * Loads the data and converts to suitable format for later analysis.
+    * Identifies and corrects inconsistencies or errors in the data (e.g., duplicates, incorrect values).
+    * Handles missing values appropriately (e.g., imputation, removal, justification for approach).
+    * Identifies and corrects data types issues (e.g., categorical variables, ordinal variables, numerical variables).
+* Development of EDA (20%)
+    * Outline of initial high-level review of the data.
+    * Rationale for selecting the aspects to focus on in the EDA.
+    * List of research questions that the EDA will aim to answer.
+* EDA (40%)
+    * Computes appropriate summary statistics (mean, median, mode, variance, etc.).
+    * Visualizes the data using appropriate plots (e.g., histograms, box plots, scatter plots, etc.).
+    * Identifies and explains any patterns in the data.
+    * Uses appropriate bivariate analyses (scatter plots, correlation heatmaps, pair plots, etc.).
+    * Analyzes categorical variables using bar charts, count plots, or frequency tables.
+    * Examines relationships between categorical and numerical variables (e.g., boxplots, groupby statistics).
+    * Uses clear, well-labeled plots (titles, axes labels, legends).
+* Conclusion (20%)
+    * How well has the EDA has addressed the research questions?
+    * What are the main findings from the EDA?
+    * What are the limitations of the EDA?
+    * What are the next steps that could be taken to further explore the data?</p>
+<div class="pager">
+<a class="btn btn-primary btn-lg" href="https://moodle.wit.ie/mod/assign/view.php?id=4469633" role="button">Moodle Assignment</a>
+</div>
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
