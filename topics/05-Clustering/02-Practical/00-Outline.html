@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>(MSc) Data Mining</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=209190" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="" target="_blank"><img height="15pt" src="style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/05-Clustering/index.html#01-Overview">Overview</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/05-Clustering/index.html#02-Practical">Practical</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Outline</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li class="active">
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li >
+											<a href="01-DigitsData.html">DigitsData</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next"><a href="01-DigitsData.html">Next (DigitsData) &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Clustering: Hierarchical and Partition-based</h1>
+<p>As with previous weeks, the working environment for this week's practicals is a
+set of <a href="http://jupyter-notebook.readthedocs.io/en/stable/">Jupyter</a> notebooks.</p>
+<p>Each of these notebooks should be downloaded as a text file and run using
+<code>jupyter-lab</code>.</p>
+<p>The notebooks can be obtained from the following links:</p>
+<ul>
+<li><a href="files/Practical_A_KM_GMM.ipynb">Using a variety of clustering techniques on blob data</a></li>
+<li><a href="files/Practical_B_GMM_DBSCAN.ipynb">Use of GMM (soft) clustering</a></li>
+</ul>
+<!--- [Clustering applied to the MNIST handwritten digits data](files/Practical_C_DigitsData_GMM_KM.ipynb)-->
+<ul>
+<li><a href="files/Practical_D_BlobScores_KM.ipynb">Using k-means to cluster generated blob data, while tracking inertia and silhouette scores</a></li>
+<li><a href="files/Practical_E_AGNES.ipynb">Comparing linkage functions on a simple dataset, using the AGNES hierarchical clustering algorithm</a></li>
+<li><a href="files/Practical_F_studentGrades_Kmodes.ipynb">Using k-modes clustering on a small set of notional student grades</a></li>
+<li><a href="files/Practical_G_AutoMPG_KmodesPrototypes.ipynb">Using k-modes and k-prototypes clustering on MPG data used in R's ggplot2 demos</a></li>
+<li><a href="files/Practical_H_Isolet_Visualise.ipynb">Visualising PCA, t-SNE and UMAP for visualising "clustered" audio data</a></li>
+</ul>
+<p>You should right-click and download each file to the same directory, and then
+follow the advice below.</p>
+<p>Each notebook is extensively annotated.</p>
+<p>You should study each step in the notebook and to note any interesting
+behaviour, as this should help you gain a better understanding of the concepts
+frpm the lecture.</p>
+<p>Students should also download the following data files:</p>
+<ul>
+<li>Download this <a href="files/data/complexDataForClustering.npy">data file</a> and save in a <code>data/</code> folder under the folder where <code>Practical_A_KM_GMM.ipynb</code> was saved.</li>
+<li>Download this <a href="files/data/studentGrades.csv">data file</a> and save in a <code>data/</code> folder under the folder where <code>Practical_F_studentGrades_Kmodes.ipynb</code> was saved.</li>
+<li>Download this <a href="files/data/ggplot-mpg.csv">data file</a> and save in a <code>data/</code> folder under the folder where <code>Practical_G_AutoMPG_KmodesPrototypes.ipynb</code> was saved.</li>
+<li>Download this <a href="files/data/isolet1.csv">data file</a> and save in a <code>data/</code> folder under the folder where <code>Practical_H_Isolet_Visualisation.ipynb</code> was saved.</li>
+</ul>
+<h2>Installation</h2>
+<p>You will need to update your python packages by installing <code>hdbscan</code> and
+<code>python-graphviz</code>, using the following commands:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>conda install -y conda-forge::hdbscan
+
+conda install -y conda-forge::python-graphviz
+</code></pre></div></td></tr></table></div>
+
+<p>You might also need to install ipynbname:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda install -y conda-forge::ipynbname
+</code></pre></div></td></tr></table></div>
+
+<p>For Practical_H_Isolet_Visualisation.ipynb, you will also need to install
+<code>umap-learn</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda install -y conda-forge::umap-learn
+</code></pre></div></td></tr></table></div>
+
+<p>Unfortunately, <code>umap-learn</code> is not currently (March 2025) consistent with the
+latest version of <code>numpy</code>, which is v2.x.</p>
+<p>Users need to downgrade numpy to v1.x instead.</p>
+<p>The way I did this was to create a new (and additional) environment based on
+python 3.11 instead of python 3.12. By activating this environment instead,
+it was possible to run the notebook with UMAP.</p>
+<h2>Resources</h2>
+<p>There is a <a href="../../../resources/clusSupport.zip">compressed folder of python support
+modules</a> that should be downloaded and
+uncompressed in the same folder as the folder where you place the python
+notebooks for this practical.</p>
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next"><a href="01-DigitsData.html">Next (DigitsData) &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
