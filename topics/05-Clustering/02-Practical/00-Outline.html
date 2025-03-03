@@ -170,11 +170,15 @@ frpm the lecture.</p>
 <li>Download this <a href="files/data/isolet1.csv">data file</a> and save in a <code>data/</code> folder under the folder where <code>Practical_H_Isolet_Visualisation.ipynb</code> was saved.</li>
 </ul>
 <h2>Installation</h2>
-<p>You will need to update your python packages by installing <code>hdbscan</code> and
-<code>python-graphviz</code>, using the following commands:</p>
+<p>You will need to update your python packages by installing <code>hdbscan</code>, <code>kmodes</code>
+and <code>python-graphviz</code>, using the following commands:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>conda install -y conda-forge::hdbscan
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>conda install -y conda-forge::hdbscan
+
+conda install -y conda-forge::kmodes
 
 conda install -y conda-forge::python-graphviz
 </code></pre></div></td></tr></table></div>
@@ -183,17 +187,32 @@ conda install -y conda-forge::python-graphviz
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda install -y conda-forge::ipynbname
 </code></pre></div></td></tr></table></div>
 
-<p>For Practical_H_Isolet_Visualisation.ipynb, you will also need to install
+<p>For <code>Practical_H_Isolet_Visualisation.ipynb</code>, you will also need to install
 <code>umap-learn</code>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda install -y conda-forge::umap-learn
 </code></pre></div></td></tr></table></div>
 
 <p>Unfortunately, <code>umap-learn</code> is not currently (March 2025) consistent with the
 latest version of <code>numpy</code>, which is v2.x.</p>
-<p>Users need to downgrade numpy to v1.x instead.</p>
+<p>So users need to downgrade numpy to v1.x instead.</p>
 <p>The way I did this was to create a new (and additional) environment based on
-python 3.11 instead of python 3.12. By activating this environment instead,
-it was possible to run the notebook with UMAP.</p>
+python 3.11 instead of python 3.12. Let's say this enviornment is called
+<code>dm311</code> and your usual environment is the default <code>base</code> environment.</p>
+<p>By activating this environment instead, using Anaconda prompt, say:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda activate dm311
+</code></pre></div></td></tr></table></div>
+
+<p>you should be able to run <code>Practical_H_Isolet_Visualisation.ipynb</code> as normal.</p>
+<p>If you wish to run other notebooks, you need to deactivate <code>dm311</code> to revert to
+conda's <code>base</code> environment.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda deactivate
+</code></pre></div></td></tr></table></div>
+
+<p>The reason for this rigmarole is that <code>numpy</code> developers made a <em>breaking
+change</em> to how they name various mathematical constants like <em>infinity</em>. Since
+numpy v2.0 was released, the old names no longer work. <code>umap-learn</code> has not
+been updated yet to use the new constant names, so it crashes when it tries to
+use the old names.</p>
 <h2>Resources</h2>
 <p>There is a <a href="files/clusSupport.zip">compressed folder of python support modules</a>
 that should be downloaded and uncompressed in the same folder as the folder
