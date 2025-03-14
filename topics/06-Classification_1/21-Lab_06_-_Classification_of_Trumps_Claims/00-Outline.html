@@ -149,12 +149,12 @@
 		<h1>Performance of Classifiers on Trump's False Claims Dataset</h1>
 <h2>Aim</h2>
 <p>Dataset: <a href="./files/wapo_trumpclaims_export-012021.csv.gz">Trump's False claims</a></p>
-<p>In week 5 lecture we applied the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html">naive Bayes</a> classifier to the 
+<p>In week 6 lecture we applied the <a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html">naive Bayes</a> classifier to the 
 <a href="./files/wapo_trumpclaims_export-012021.csv.gz">Trump's False claims dataset</a> and also discussed the 
 <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">LogisticRegression</a>
 and
 <a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html">k nearest neighbors</a> classifiers.</p>
-<p>In this practical we want to compare the performance of the above classifiers and, while we are at this, we will also include a new classifier <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">decision tree classifier</a> (the theory behind which, Bernard will cover in week 8).</p>
+<p>In this practical we want to compare the performance of the above classifiers and, while we are at this, we will also include a new classifier <a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">decision tree classifier</a> (the theory behind which, Bernard will cover in week 7).</p>
 <p>So we have 4 classifiers, all of which will take in the output from the 
 <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> feature extraction step (covered in the notes). Each classifier has the exact same syntax for fit, for scoring and resulting generating of confusion matrix and classification_report. The only difference is in importing the model and creating an instance: </p>
 <ul>
