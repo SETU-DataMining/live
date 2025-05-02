@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>(MSc) Data Mining</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.wit.ie/course/view.php?id=209190" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="" target="_blank"><img height="15pt" src="style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/12-Text_Mining/index.html#01-Overview">Overview</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/12-Text_Mining/index.html#02-Practical">Practical</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Outline</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li class="active">
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Natural Language Processing: NLTK and sklearn</h1>
+<p>As usual, each notebook should be downloaded to your laptop and run using <code>jupyter-lab</code>, as
+described in previous practicals.</p>
+<p>The notebooks can be obtained from the following links:</p>
+<ul>
+<li><a href="files/NLTK_example.ipynb">1. Using NLTK to process a variety of documents</a></li>
+<li><a href="files/sklearn_TF-IDF.ipynb">2. Using sklearn TF-IDF to derive word embedding and hence to compare inaugural speeches</a></li>
+<li><a href="files/amazonReview-sentiment.ipynb">3. Using NLTK to preprocess Amazon reviews and to compare NLTK's VADER bag-of-words Sentiment Analyser with HuggingFace's RoBERTA transformer-based Sentiment Analyser</a></li>
+<li><a href="files/yelpReview-sentiment.ipynb">4. Scrape yelp reviews and use HuggingFace BERT transformer to classify the reviews by sentiment levels, comparing them with star ratings chosen by the reviewers</a></li>
+</ul>
+<h2>Installation</h2>
+<!--
+These notebooks require a large number of dependencies. I had trouble adding them to my existing conda datamining environment.
+
+Therefore, students are advised to create a conda environment specifically for NLP purposes.
+
+For convenience, here are the commands you need if you manage your conda environments and packages using the command line.
+
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>nlp<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>nlp
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>anaconda::jupyter
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::jupyterlab
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>anaconda::beautifulsoup4
+
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::pandas
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::numpy
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::scikit-learn
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::scipy
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::matplotlib
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::seaborn
+
+<span class="c1"># see https://pytorch.org/get-started/locally/</span>
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>cpuonly<span class="w"> </span>-c<span class="w"> </span>pytorch
+</code></pre></div></td></tr></table></div>
+
+
+-->
+
+<p>These notebooks require additional dependencies.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::nltk
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::altair
+conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::textblob
+
+conda<span class="w"> </span>install<span class="w"> </span>conda-forge::transformers<span class="w"> </span><span class="c1"># huggingface</span>
+</code></pre></div></td></tr></table></div>
+
+<h2>Resources</h2>
+<p>The NLTK package comes with optional document corpora, which are used by notebook 1.</p>
+<p>Notebook 2 uses <a href="files/data/inaug_speeches.csv">inaugural speeches which were obtained from kaggle and downloaded for convenience</a>.</p>
+<p>Notebook 3 uses <a href="files/data/Reviews1000.csv">Amazon reviews which were obtained from kaggle and was downloaded for convenience</a>.</p>
+<p>Notebook 4 uses web scraping to collect the yelp reviews whose sentiment is then assessed.</p>
+<!--For the sklearn TF-IDF notebook, you will need to download the [inaugural speeches data from kaggle](https://www.kaggle.com/datasets/adhok93/presidentialaddress?resource=download), or alternatively you can just download them from [here](files/data/inaug_speeches.csv).-->
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
