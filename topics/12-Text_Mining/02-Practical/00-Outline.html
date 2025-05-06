@@ -145,60 +145,23 @@ described in previous practicals.</p>
 <li><a href="files/yelpReview-sentiment.ipynb">4. Scrape yelp reviews and use HuggingFace BERT transformer to classify the reviews by sentiment levels, comparing them with star ratings chosen by the reviewers</a></li>
 </ul>
 <h2>Installation</h2>
-<!--
-These notebooks require a large number of dependencies. I had trouble adding them to my existing conda datamining environment.
-
-Therefore, students are advised to create a conda environment specifically for NLP purposes.
-
-For convenience, here are the commands you need if you manage your conda environments and packages using the command line.
-
-
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>nlp<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
-conda<span class="w"> </span>activate<span class="w"> </span>nlp
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>anaconda::jupyter
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::jupyterlab
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>anaconda::beautifulsoup4
-
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::pandas
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::numpy
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::scikit-learn
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::scipy
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::matplotlib
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::seaborn
-
-<span class="c1"># see https://pytorch.org/get-started/locally/</span>
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pytorch<span class="w"> </span>torchvision<span class="w"> </span>torchaudio<span class="w"> </span>cpuonly<span class="w"> </span>-c<span class="w"> </span>pytorch
+<p>These notebooks require a large number of dependencies. I had trouble adding
+them to my existing conda <code>datamining</code> environment.</p>
+<p>Therefore, students are advised to create a conda environment specifically for
+NLP purposes.</p>
+<p>For your convenience, I have included an environment specification file called
+<a href="files/nlp.yml">nlp.yml</a> that students should download and use as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>nlp.yml
 </code></pre></div></td></tr></table></div>
 
-
--->
-
-<p>These notebooks require additional dependencies.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::nltk
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::altair
-conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>conda-forge::textblob
-
-conda<span class="w"> </span>install<span class="w"> </span>conda-forge::transformers<span class="w"> </span><span class="c1"># huggingface</span>
-</code></pre></div></td></tr></table></div>
-
+<p>The other complexity is that, even when the relevant packages have been
+installed, there are additional resources that need to be downloaded, from
+stop-words to trained models, for the code to run.</p>
+<p>These resources need to be downloaded just once, so the code that downloads
+them can be commented out afterwards.</p>
+<p>Please refer to <code>NLTK_example.ipynb</code> and <code>amazonReview-sentiment.ipynb</code> and
+uncomment the relevant <code>nltk.download</code> lines if needed, remembering to comment
+them out again after use, to reduce notebook run-times, etc.</p>
 <h2>Resources</h2>
 <p>The NLTK package comes with optional document corpora, which are used by notebook 1.</p>
 <p>Notebook 2 uses <a href="files/data/inaug_speeches.csv">inaugural speeches which were obtained from kaggle and downloaded for convenience</a>.</p>

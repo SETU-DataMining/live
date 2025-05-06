@@ -1,0 +1,25 @@
+name: nlp
+channels:
+  - defaults
+dependencies:
+  - beautifulsoup4
+  - jupyterlab
+  - jupytext
+  - matplotlib
+  - nbconvert
+  - nltk
+  - numpy
+  - pandas
+  - python=3.12
+  - requests
+  - scikit-learn
+  - scipy
+  - seaborn
+  - conda-forge::altair
+  - conda-forge::blessings
+  - conda-forge::ipywidgets
+  - conda-forge::prettyprinter
+  - conda-forge::pytorch
+  - conda-forge::transformers
+  - conda-forge::weasyprint
+prefix: /home/bbutler/miniconda3/envs/nlp
