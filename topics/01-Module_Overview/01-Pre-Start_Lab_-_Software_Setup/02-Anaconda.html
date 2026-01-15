@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>(MSc) Data Mining</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.setu.ie/course/view.php?id=217451" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://datamining202526.slack.com" target="_blank"><img height="15pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li class="active">
+											<a href="../../../topics/01-Module_Overview/index.html#01-Pre-Start_Lab_-_Software_Setup">Pre-Start Lab - Software Setup</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Overview/index.html#12-A_Review_of_Statistical_Concepts">A Review of Statistical Concepts</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Anaconda</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li >
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li >
+											<a href="01-Software.html">Software</a>
+										</li>
+										
+										<li class="active">
+											<a href="02-Anaconda.html">Anaconda</a>
+										</li>
+										
+										<li >
+											<a href="03-Review_of_existing_skills.html">Review of existing skills</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Software.html">&larr; Previous (Software)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Review_of_existing_skills.html">Next (Review of existing skills) &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Python tools</h1>
+<p>This page is intended to be a minimal overview of the Anaconda distribution and jupyter-lab interface.
+For more detailed guides have a look at 
+<a href="https://docs.anaconda.com/free/navigator/tutorials/index.html">Anaconda's official documentation</a>.</p>
+<h2>Signup for AI Coding Help</h2>
+<figure>
+  <img src="files/sign_up_for_AI_help.png" alt="" width="30%" >
+  <figcaption>Signup for AI Coding Help</figcaption>
+</figure>
+
+<p>Recently added to the Anaconda Navigator is the ability to use AI to help with coding when using Jupyter-lab - this is our preferred IDE for this module. </p>
+<p>The use of AI in coding and in data mining is fundmentially changing the way we work, and can both help and hinder our learning.  We will talk more about this in the lectures, but we recommend that you do not use this AI coding feature within the jupyter-lab environment.  Our goal here is to help you learn the material, and not just to produce the listed deliverables. </p>
+<h2>Anaconda Navigator</h2>
+<p>The Anaconda distribution supports a large number of python tools and to simplify their use, the distribution includes a small application called the <em>Anaconda Navigator</em>. For our purposes, there are two important items:</p>
+<ul>
+<li>The <em>Environments</em> tab, on the left, that opens graphical interface to the <code>conda</code> package manager.</li>
+<li>The <em>jupyter-lab</em> card near the top right, that starts the <em>jupyter-lab</em> kernel back-end and opens the front-end in a browser window.</li>
+</ul>
+<figure>
+  <img src="files/navigator.png" alt="" width="80%" >
+  <figcaption>Anaconda Navigator</figcaption>
+</figure>
+
+<p>On launching the jupyter-lab you should see the following</p>
+<figure>
+  <img src="files/jupyter_start.png" alt="" width="80%" >
+  <figcaption>jupyter-lab interface</figcaption>
+</figure>
+
+<p>Now click on <code>Python 3</code> notebook icon to get a new blank notebook:</p>
+<figure>
+  <img src="files/jupyter_blank.png" alt="" width="80%" >
+  <figcaption>jupyter-lab on creating a new notebook</figcaption>
+</figure>
+
+<p>We will demo this interface in the pre-start lab, but for now our primary goal is that you have the software installed and working.</p>
+<hr />
+<div class="jumbotron">
+  <h1 class="display-4">Today's Exercise</h1>
+  <p class="lead">OK, that is enough setup for the moment. <br/><br/>
+
+  Now we are going to put python aside for a moment and review your existing data analytics skills using a small dataset.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="03-Review_of_existing_skills.html" role="button">Review of existing skills</a>
+  </p>
+</div>
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="01-Software.html">&larr; Previous (Software)</a></li>
+			
+			
+			
+			<li class="next"><a href="03-Review_of_existing_skills.html">Next (Review of existing skills) &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>

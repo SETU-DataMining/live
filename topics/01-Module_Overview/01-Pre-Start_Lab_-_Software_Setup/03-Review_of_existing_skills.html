@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>(MSc) Data Mining</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.setu.ie/course/view.php?id=217451" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://datamining202526.slack.com" target="_blank"><img height="15pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li class="active">
+											<a href="../../../topics/01-Module_Overview/index.html#01-Pre-Start_Lab_-_Software_Setup">Pre-Start Lab - Software Setup</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/01-Module_Overview/index.html#12-A_Review_of_Statistical_Concepts">A Review of Statistical Concepts</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Review of existing skills</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li >
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+										<li >
+											<a href="01-Software.html">Software</a>
+										</li>
+										
+										<li >
+											<a href="02-Anaconda.html">Anaconda</a>
+										</li>
+										
+										<li class="active">
+											<a href="03-Review_of_existing_skills.html">Review of existing skills</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="02-Anaconda.html">&larr; Previous (Anaconda)</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>Data Exploration (Tips Dataset)</h1>
+<p>Using <code>python</code> with <code>pandas</code> and other modules does greatly simplify the data exploration process. However, we don't want you to get so focused on the tools that you overlook the actual process, and with enough masochism one could carry out all of the data exploration for this course using SQL, Excel, or even other programming languages.</p>
+<p><strong>So before we start on <code>python</code> and friends, we want you to explore a small dataset. You can use any software tool/environment that you like &mdash; our goal here is help you realise that (even if data science is new to you) that you might be bringing more skills to the table than you realise.</strong></p>
+<p>We start by downloading the dataset:</p>
+<div class="pager">
+<a class="btn btn-primary btn-lg" href="files/data/tips.csv" role="button">Download Tips dataset</a>
+</div>
+
+<p>Open this dataset using the software of your choice &mdash; excel, mysql, ... &mdash; and using your software examine the data. Typical things we look for include:</p>
+<ul>
+<li>For each attribute (columns) find the following information.<ul>
+<li>The attribute type, e.g., nominal, ordinal, numeric.</li>
+<li>Percentage of missing values in the data.</li>
+<li>Statistical numerical measures &mdash; centre (mean, median, mode), spread (min, max, range, standard deviation), symmetry (skewness).</li>
+<li>Statistical graphical representations &mdash; bar plots, histograms, ... even pie charts.</li>
+<li>Are there any rows that have a value for the attribute that no other record has (i.e., unique values)?</li>
+<li>Are there any outliers?</li>
+</ul>
+</li>
+<li>Which attributes seem to be linked?</li>
+</ul>
+<p>Later we will perform the same analysis using pandas, but for now the focus is on see what you can see when you look at data.</p>
+<p>When you are happy with exploring the data, try the following Moodle quiz.</p>
+<p><a name="Quiz"></a></p>
+<div class="pager">
+<a class="btn btn-primary btn-lg" href="https://moodle.wit.ie/mod/quiz/view.php?id=4432536" role="button">Moodle Quiz</a>
+</div>
+
+<p>For those who are not registered on Moodle you will not be able to access the quiz. Instead you can download a <a href="files/quiz_no_moodle.pdf">PDF with the questions</a> and attempt the quiz offline. Again, we hope to get all students on Moodle in a few days.</p>
+		
+		<ul class="pager">
+			
+			<li class="previous"><a href="02-Anaconda.html">&larr; Previous (Anaconda)</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
