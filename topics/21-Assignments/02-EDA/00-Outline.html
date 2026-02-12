@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>(MSc) Data Mining</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../style/codehilite/css/default.css" rel="stylesheet">
+    <link href="../../../style/misc/css/module.css" rel="stylesheet">
+    <link href="../../../style/misc/css/practical.css" rel="stylesheet">
+
+	<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+  </head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			
+			
+	    	<div class="collapse navbar-collapse">
+
+				<ul class="nav navbar-nav navbar-left">
+					<!-- Moodle -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://moodle.setu.ie/course/view.php?id=217451" target="_blank"><img height="18pt" src="../../../style/misc/img/moodle_logo_on_blue.gif" /></a>
+						</div>						
+					</li>
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="https://datamining202526.slack.com" target="_blank"><img height="15pt" src="../../../style/misc/img/slack_logo.png" /></a>
+						</div>						
+					</li>
+				</ul>
+
+	      		<ul class="nav navbar-nav navbar-right">
+
+					<!-- module home -->
+					<li>
+						<div class="navbar-header">
+							<a class="navbar-brand" href="../../../index.html"><span class="glyphicon glyphicon-home"></span></a>
+						</div>						
+					</li>
+					
+					<!-- topics -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-list-alt"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Topics</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+
+					<!-- resources -->
+	        		<li>
+						<div class="navbar-collapse collapse" id="b">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-th-list"></span>
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">Resources</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html#01-Data_Mining_Proposal">Data Mining Proposal</a>
+										</li>
+										
+										<li class="active">
+											<a href="../../../topics/21-Assignments/index.html#02-EDA">EDA</a>
+										</li>
+										
+										<li >
+											<a href="../../../topics/21-Assignments/index.html#03-Kaggle_Competition">Kaggle Competition</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li>
+								
+					<!-- pages-->
+	        		<li>
+						<div class="navbar-collapse collapse" id="c">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<span>Outline</span
+									</a>
+									<ul class="dropdown-menu" role="menu">
+										
+										<li class="active">
+											<a href="00-Outline.html">Outline</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+						</div>			
+					</li> 
+					
+	        	</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- contents -->
+	<div class="container">
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+		
+		<h1>CA2 &mdash; Exploratory Data Analysis (EDA) of Health Insurance Campaign Data</h1>
+<h2>Introduction</h2>
+<p>In this assignment, you will perform Exploratory Data Analysis (EDA) on a dataset containing information about existing customers who were targeted in a campaign to sell health insurance. The primary goal is to analyze the data, gain insights, and prepare it for further analysis &mdash; for example, building a classification model or advice for futures campaigns.</p>
+<h2>Dataset</h2>
+<p>The data set is available on Moodle and can also be downloaded from the following URL:</p>
+<p><a href="https://setu-datamining.github.io/live/resources/CA2/health_insurance.csv">https://setu-datamining.github.io/live/resources/CA2/health_insurance.csv</a></p>
+<p>or use Python/pandas to get the data directly from the URL:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://setu-datamining.github.io/live/resources/CA2/health_insurance.csv&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+
+<h2>Dataset Description</h2>
+<p>The dataset consists of several features related to the customers, such as age, marital status, education and employment status, interactions on previous campaigns, some background economic indicators, and whether they purchased health insurance during the campaign. Each row represents a single customer.</p>
+<p>The target column, <code>Health.Insurance</code>, stores whether they purchased health insurance during the campaign.  Most customers did not purchase health insurance during this campaign.</p>
+<p>The remaining columns are a mix of customer personal data, campaign data and economic background indicators. The columns are:</p>
+<p><code>Health.Insurance</code></p>
+<ul>
+<li>(TARGET) Has the customer agreed to take on life insurance as a result of the campaign?</li>
+</ul>
+<p><code>age</code></p>
+<ul>
+<li>Customer's age at time of report.</li>
+</ul>
+<p><code>Consumer Confidence Index</code></p>
+<ul>
+<li>Consumer confidence index (monthly indicator).</li>
+</ul>
+<p><code>Consumer Price Index</code></p>
+<ul>
+<li>Consumer price index (monthly indicator).</li>
+</ul>
+<p><code>Credit.Card.Debt?</code></p>
+<ul>
+<li>Customer's credit card utilisation is greater than 30% of credit limit?</li>
+</ul>
+<p><code>date.of.contact</code></p>
+<ul>
+<li>Date of last contact with customer.</li>
+</ul>
+<p><code>Days.Since.Last.Contact</code></p>
+<ul>
+<li>Number of days that have passed since last contact to customer was attempted (999 if customer was not previously contacted).</li>
+</ul>
+<p><code>Education</code></p>
+<ul>
+<li>Customer's education level.</li>
+</ul>
+<p><code>Employment</code></p>
+<ul>
+<li>Customer's employment status.</li>
+</ul>
+<p><code>Employment Variation Rate</code></p>
+<ul>
+<li>Employment variation rate (quarterly indicator).</li>
+</ul>
+<p><code>Euro Short Term Rate</code></p>
+<ul>
+<li>Euro Short Term Rate (ESTER) (daily indicator) is average interest rate between European financial institutions with a maturity of 1 day.</li>
+</ul>
+<p><code>Has Serious Illness Cover?</code></p>
+<ul>
+<li>Customer has serious illness cover?</li>
+</ul>
+<p><code>Has.Loan?</code></p>
+<ul>
+<li>Customer has a personal/car loan?</li>
+</ul>
+<p><code>Has.Mortgage?</code></p>
+<ul>
+<li>Customer has a mortgage?</li>
+</ul>
+<p><code>Last.Call.Duration</code></p>
+<ul>
+<li>Duration of last call (in sec) to customer in campaign to promote insurance.</li>
+</ul>
+<p><code>Marital</code></p>
+<ul>
+<li>Customer's marital status.</li>
+</ul>
+<p><code>Number.of.Contacts</code></p>
+<ul>
+<li>Number of contacts to customer during this campaign.</li>
+</ul>
+<p><code>Phone.Type</code></p>
+<ul>
+<li>Customer's contact number type.</li>
+</ul>
+<p><code>Previous.Campaign.Outcome</code></p>
+<ul>
+<li>Outcome of the previous marketing campaign.</li>
+</ul>
+<p><code>Previous.Campaigns</code></p>
+<ul>
+<li>Number of contacts to customer performed in previous campaigns.</li>
+</ul>
+<h2>Objective</h2>
+<p>The objective of this assignment is to explore the dataset through various statistical and visualization techniques to gain insights into the customer demographics, their interactions, and factors influencing the purchase of health insurance during the campaign. </p>
+<p>Then use these insights to suggest:</p>
+<ul>
+<li>any data cleaning steps to apply.</li>
+<li>which features should be included/excluded in a classification model.</li>
+<li>any feature engineering (engineering/transformation/selection) steps that should be applied.</li>
+<li>any issues/concerns with the dataset.</li>
+</ul>
+<h2>Tasks</h2>
+<ol>
+<li>
+<p>Initial Load and Clean (20%)</p>
+</li>
+<li>
+<p>Load the dataset into an appropriate ML environment.</p>
+</li>
+<li>Check for any missing values and flag/handle them appropriately.</li>
+<li>
+<p>Perform data type conversion if necessary.</p>
+</li>
+<li>
+<p>EDA of Target and Features (30%)</p>
+</li>
+<li>
+<p>Analyze the distribution of the target variable (purchase of health insurance) to understand the class balance.</p>
+</li>
+<li>Explore the distribution of numerical features using histograms, box plots, or density plots, ...</li>
+<li>Analyze the relationship between numerical features and the target variable using scatter plots, correlation analysis, ...</li>
+<li>Explore the distribution of categorical features (gender, marital status, etc.) using bar plots, ...</li>
+<li>
+<p>Analyze the relationship between categorical features and the target variable using contingency tables, chi-square tests, ...</p>
+</li>
+<li>
+<p>Feature-Feature Relations: (25%)</p>
+</li>
+<li>
+<p>Identify any significant correlations or relationships between features and the target variable.</p>
+</li>
+<li>
+<p>Explore any potential patterns or trends in the data using appropriate visualizations.</p>
+</li>
+<li>
+<p>Conclusion (25%)</p>
+</li>
+<li>
+<p>Brief conclusion summarizing the <strong>key findings</strong> of your analysis.</p>
+</li>
+<li>Discuss any insights that could help in understanding customer behavior and informing future marketing strategies.</li>
+<li>Highlight any recommendations for subsequent steps in building a classification model or steps that should be considered if re-running a similar campaign.</li>
+<li>You want to keep comments brief, but still justify your interpretations.</li>
+</ol>
+<h2>Submission Guidelines</h2>
+<ul>
+<li>Submit a jupyter notebook documenting your analysis, including code snippets, visualizations, and interpretations. </li>
+<li>If you decide to write functions to perform your EDA (often a good idea), then feel free to put those functions into a separate python script file, which is then imported in your notebook.  Just make sure to upload any script files with your notebook and that notebook is fully executable when script is placed in the same folder as the notebook.</li>
+<li>Ensure that your report is well-organized, clearly written, and includes appropriate headings and subheadings (via markdown).</li>
+<li>Ensure that your notebook will execute all cells, as is, when placed in a folder containing subfolder <code>data</code>, containing the file <code>health_insurance.csv</code></li>
+<li>You can use any libraries you like, but make sure to import them in your notebook.</li>
+<li>Include comments in your code to explain your thought process and the steps you are taking.</li>
+</ul>
+<div class="pager">
+<a class="btn btn-primary btn-lg" href="https://moodle.setu.ie/mod/assign/view.php?id=4717488" role="button">Moodle Assignment</a>
+</div>
+		
+		<ul class="pager">
+			
+			<li class="previous disabled"><a>&larr; Previous</a></li>
+			
+			
+			
+			<li class="next disabled"><a>Next &rarr;</a></li>
+			
+		</ul>
+
+	</div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../../style/bootstrap/js/bootstrap.min.js"></script>
+	
+  </body>
+</html>
