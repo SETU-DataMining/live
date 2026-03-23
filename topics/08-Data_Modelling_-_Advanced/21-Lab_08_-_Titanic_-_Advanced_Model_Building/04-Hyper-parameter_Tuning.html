@@ -162,7 +162,7 @@
 <h2>Aim/Outline</h2>
 <p>Now we want to determine the optimal hyper-parameters for each classifier and select the classifier that performs best.  A few comments:</p>
 <ul>
-<li>You will need to tune each of the four classifiers separately, since the different classifiers have different hyperparameters.  Yes, there is a way to combine the four searches into one and feel free to do this yourself.</li>
+<li>You will need to tune each of the four classifiers separately, since the different classifiers have different hyper-parameters.  Yes, there is a way to combine the four searches into one and feel free to do this yourself.</li>
 <li>In the following section I have given an example of a grid search (you should strongly consider switching to a random search).  </li>
 </ul>
 <h2>Details</h2>
@@ -208,7 +208,7 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">gs</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 
-<p>and see optimal hyperparameters using </p>
+<p>and see optimal hyper-parameters using</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">gs</span><span class="o">.</span><span class="n">best_params_</span>
 </code></pre></div></td></tr></table></div>
 

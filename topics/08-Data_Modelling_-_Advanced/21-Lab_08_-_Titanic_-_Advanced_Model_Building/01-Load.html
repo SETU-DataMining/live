@@ -165,9 +165,9 @@
 <li><a href="./files/train.csv">train.csv</a><br/>
  Used to train model </li>
 <li><a href="./files/test.csv">testcsv</a><br/>
- Used in Kaggle competition to evaluate model &mdash; we will not be using this.</li>
+ Used in Kaggle competitions to evaluate users' models &mdash; we will not be needing this.</li>
 </ul>
-<p>In your <code>practicas</code> or <code>datasets</code> folder create folder <code>Titanic</code>. Open a new jupyter-lab notebook at this location and enter our standard imports:</p>
+<p>In your <code>practicals</code> or <code>datasets</code> folder create folder <code>Titanic</code>. Open a new jupyter-lab notebook at this location and enter our standard imports:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -177,10 +177,10 @@
 <span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-darkgrid&#39;</span><span class="p">)</span>
-
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="n">SEED</span> <span class="o">=</span> <span class="n">YOU_PICK_ANY_INT_VALUE_HREE</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
+
+<span class="n">SEED</span> <span class="o">=</span> <span class="n">YOU_PICK_ANY_INT_VALUE_HERE</span>
 </code></pre></div></td></tr></table></div>
 
 <p>Create required subfolder structure</p>
@@ -192,7 +192,7 @@
 </code></pre></div></td></tr></table></div>
 
 <p>Download the two data files 
-(<a href="./files/train.csv">train.csv</a> and <a href="./files/test.csv">testcsv</a>)
+(<a href="./files/train.csv">train.csv</a> and <a href="./files/test.csv">test.csv</a>)
 and place in subfolder <code>orig</code>.</p>
 <p>Then to load data we use (see week 3)</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
@@ -210,11 +210,11 @@ and place in subfolder <code>orig</code>.</p>
 <span class="n">df</span><span class="o">.</span><span class="n">Embarked</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Embarked</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
-<p>Update: In week 2 I also converted the target, <code>Survived</code>, to categorical with string labels, because the visualisation library, seaborn would not render the cat plot </p>
+<p>Update: In week 2 I also converted the target, <code>Survived</code>, to categorical with string labels, because the visualisation library, <code>seaborn</code> would not render the cat plot </p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
-<p>correctly. A better solution is to leave the target as is and the include the option <code>orient='h'</code> in the catplot as in</p>
+<p>correctly. A better solution is to leave the target as is and the include the option <code>orient='h'</code> in the <code>catplot</code> as in</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Survived&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 

@@ -176,7 +176,7 @@
 </ul>
 <p><strong>Outlier</strong></p>
 <ul>
-<li>'Fare' --- I would use consider Censoring. The zero values, I would treat as NA.</li>
+<li><code>Fare</code> --- I would use consider Censoring. The zero values, I would treat as <code>NA</code>.</li>
 </ul>
 <p><strong>Binning</strong></p>
 <ul>
@@ -202,11 +202,11 @@
 </ul>
 <p><strong>Splitting</strong></p>
 <ul>
-<li><code>Title</code> --- We could extracte the title from the <code>Name</code> column (see below)</li>
-<li><code>Deck</code> --- We could extracte the deck information from the <code>Cabin</code> column</li>
+<li><code>Title</code> --- We could extract the title from the <code>Name</code> column (see below)</li>
+<li><code>Deck</code> --- We could extract the deck information from the <code>Cabin</code> column</li>
 </ul>
 <h3>Feature Transformation</h3>
-<p>There are a number of plausible  transformation that you could do, for example</p>
+<p>There are a number of plausible transformation that you could do, for example</p>
 <ul>
 <li><code>Family_Size</code> --- equal to <code>SibSp</code> + <code>Parch</code>  <br/></li>
 </ul>
@@ -230,7 +230,7 @@
 </figure>
 
 <p>To get title we need to split at "," to remove material before the title, then split on "." to drop material after title. Finally we use <code>strip</code> to remove leading and trailing spaces. </p>
-<p>So writing </p>
+<p>So writing</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
@@ -243,7 +243,7 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
-<p>we get </p>
+<p>we get</p>
 <figure>
   <img src="files/title_2.png" alt="" width="40%" >
 </figure>
@@ -254,7 +254,7 @@
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 
-<p>we get </p>
+<p>we get</p>
 <figure>
   <img src="files/title_3.png" alt="" width="40%" >
 </figure>
