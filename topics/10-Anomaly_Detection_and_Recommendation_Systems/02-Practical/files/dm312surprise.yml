@@ -1,0 +1,16 @@
+name: dm312surprise
+channels:
+  - defaults
+dependencies:
+  - blessings
+  - jupyterlab
+  - jupytext
+  - nbconvert
+  - numpy
+  - pandas
+  - python=3.12
+  - scikit-learn
+  - weasyprint
+  - conda-forge::pyod
+  - conda-forge::scikit-surprise
+prefix: $HOME/miniconda3/envs/dm312surprise
