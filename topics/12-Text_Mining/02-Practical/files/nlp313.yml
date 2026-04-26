@@ -1,0 +1,24 @@
+name: nlp313
+channels:
+  - defaults
+dependencies:
+  - beautifulsoup4
+  - jupyterlab
+  - jupytext
+  - matplotlib
+  - nbconvert
+  - nltk
+  - numpy
+  - pandas
+  - prettyprinter
+  - python=3.13
+  - requests
+  - scikit-learn
+  - scipy
+  - seaborn
+  - weasyprint
+  - conda-forge::altair
+  - conda-forge::blessings
+  - conda-forge::pytorch
+  - conda-forge::transformers
+prefix: $HOME/miniconda3/envs/nlp313
